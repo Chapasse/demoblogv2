@@ -53,24 +53,24 @@ class ArticlesFixtures extends Fixture
                 $manager->persist($article);
                 
                 //créer entre 5 et 10 commentaires par articles
-                for ($k=1; $k <= mt_rand(5,10); $k++) 
-                { 
-                    $comment= new Comment;
+                // for ($k=1; $k <= mt_rand(5,10); $k++) 
+                // { 
+                //     $comment= new Comment;
                     
-                    $content = '<p>' . join('</p><p>', $faker->paragraphs(2)) . '</p>';
+                //     $content = '<p>' . join('</p><p>', $faker->paragraphs(2)) . '</p>';
 
-                    $now = new \DateTime; // récuération de la date d'ajourd'hui
-                    $interval = $now->diff($article->getCreatedAt()); // intervalle entre aujourd'hui et la date de création de l'article
-                    $days = $interval->days; // On récupère l'intervalle en jours
+                //     $now = new \DateTime; // récuération de la date d'ajourd'hui
+                //     $interval = $now->diff($article->getCreatedAt()); // intervalle entre aujourd'hui et la date de création de l'article
+                //     $days = $interval->days; // On récupère l'intervalle en jours
 
-                    $comment->setAuthor($faker->name())
-                    ->setContent($content)
-                    ->setCreatedAt($faker->dateTimeBetween("-$days days"))
-                    ->setArticle($article);
+                //     $comment->setAuthor($faker->name())
+                //     ->setContent($content)
+                //     ->setCreatedAt($faker->dateTimeBetween("-$days days"))
+                //     ->setArticle($article);
     
-                    $manager->persist($comment);
+                //     $manager->persist($comment);
 
-                }
+                // }
             }
         }
         

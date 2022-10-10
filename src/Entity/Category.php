@@ -72,4 +72,10 @@ class Category
 
         return $this;
     }
+
+    public function __toString()
+    {
+        // __tostring() s'exécute automatiquement lorsqu'on essaye d'afficher un objet
+        return $this->getTitle();
+    }
 }
